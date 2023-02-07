@@ -1,0 +1,139 @@
+<div class="container">
+  <div class=" text-center mt-5 ">
+    <h1>Produsts create</h1>
+  </div>
+  <div class="row ">
+    <div class="col-lg-7 mx-auto">
+      <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+          <div class="container">
+            <form id="contact-form" role="form" (submit)="onAddProduct(productForm)" #productForm="ngForm">
+              <div class="controls">
+                <div class="col-md-6">
+                  <div class="form-group"> <label for="form_email">ID *</label>
+                    <input #localID="ngModel" required [ngClass]="{'is-invalid': localID.errors && localID.touched}"
+                      type="number" [(ngModel)]="mProduct.id" name="id" placeholder="enter id" />
+                    <div class="invalid-feedback">
+                      กรุณากรอกข้อมูลให้ถูกต้อง
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+
+                  <div class="col-md-6">
+                    <div class="form-group"> <label for="form_name">Name *</label>
+                      <input matInput #localproduct="ngModel" required
+                        [ngClass]="{'is-invalid': localproduct.errors && localproduct.touched}" type="text"
+                        [(ngModel)]="mProduct.productName" name="productName" placeholder="enter name" />
+                      <div class="invalid-feedback">
+                        กรุณากรอกข้อมูลให้ถูกต้อง
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group"> <label for="form_lastname">Price *</label>
+                      <input matInput #localPrice="ngModel" required
+                        [ngClass]="{'is-invalid': localPrice.errors && localPrice.touched}" type="number"
+                        [(ngModel)]="mProduct.productPrice" name="productPrice" placeholder="enter price" />
+                      <div class="invalid-feedback">
+                        กรุณากรอกข้อมูลให้ถูกต้อง
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="col-md-6">                 
+                      <div class="form-group"> <label for="form_need">Type *</label> </div>
+                    <div class="form-group">  <label for="form_email"></label>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Select Type</mat-label>
+                        <mat-select [(ngModel)]="mProduct.idType" name="idType">
+                          <mat-option *ngFor="let i of mtype" [value]="i.id">
+                            {{i.typeName}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+                      <div class="col-md-12">
+                        <div class="form-group"> <label for="form_message">Stock *</label>
+                          <input matInput #Detail="ngModel" required
+                            [ngClass]="{'is-invalid': Detail.errors && Detail.touched}" type="text"
+                            [(ngModel)]="mProduct.pdStock" name="pdStock" placeholder="enter stock" />
+                          <div class="invalid-feedback">
+                            กรุณากรอกข้อมูลให้ถูกต้อง
+                          </div>
+                        </div>
+                      </div>
+                  
+                    </div>
+                  </div>
+
+                  
+                 
+                
+                
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group"> <label for="form_message">Detail *</label>
+                      <input matInput #Detail="ngModel" required
+                        [ngClass]="{'is-invalid': Detail.errors && Detail.touched}" type="text"
+                        [(ngModel)]="mProduct.productDetail" name="productDetail" placeholder="enter name" />
+                      <div class="invalid-feedback">
+                        กรุณากรอกข้อมูลให้ถูกต้อง
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group"> <label for="form_message">DetailSpecifics *</label>
+                      <input matInput #Specifics="ngModel" required
+                        [ngClass]="{'is-invalid': Specifics.errors && Specifics.touched}" type="text"
+                        [(ngModel)]="mProduct.detailSpecifics" name="detailSpecifics" placeholder="enter name" />
+                      <div class="invalid-feedback">
+                        กรุณากรอกข้อมูลให้ถูกต้อง
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+
+                    
+                    
+                    <div class="form-group">
+                      <button type="button" mat-stroked-button (click)="inputFile.click()" color="primary">
+                        <mat-icon>photo</mat-icon>
+                        <span>Selected file</span>
+                      </button>
+                      <div class="col-md-4" *ngIf="imageSrc">
+                        <img [src]="imageSrc" class="img-fluid border rounded-top rounded-bottom">
+                      </div>
+                      <input (change)="onUploadImage($event)" hidden #inputFile type="file" accept="image/*" id="">
+                    </div>
+                  </div>
+                  <!-- <div class="col-md-12"> <input [disabled]="productForm.form.invalid" type="submit"
+                      class="btn btn-primary " value="Accept">
+                  </div> -->
+
+
+                  <!-- <div class="">
+                    <button type="button" mat-raised-button color="warn" (click)="onClickCancel()">Cancel</button>
+                </div> -->
+
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="form-check mb-0">
+                    <div class="col-md-12"> <input [disabled]="productForm.form.invalid" type="submit" class="btn btn-primary "
+                        value="Accept">
+                    </div>
+                  </div>
+                  <button type="button" mat-raised-button color="warn" (click)="onClickCancel()">Cancel</button>
+                </div>
+
+                
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div> <!-- /.8 -->
+    </div> <!-- /.row-->
+  </div>
+</div>

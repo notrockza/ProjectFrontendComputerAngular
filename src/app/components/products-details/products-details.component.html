@@ -1,0 +1,133 @@
+
+
+
+
+<!-- <div  class="navbar nav-transparent" >
+    <div class="container">
+    <div class="blog" >
+        <div class="blog-img">
+            <img class="col-md-6 col-xs-6 work" src="https://localhost:44303/{{MProduct.image}}" alt="">
+        </div>
+        <div class="blog-content">
+            <ul class="blog-meta">
+                <li><i class="fa fa-usd" aria-hidden="true"></i>{{MProduct.productPrice}}</li>
+                <li><i class="fa fa-archive" aria-hidden="true"></i>{{MProduct.pdStock}}</li>
+                <li><i class="fa fa-clock-o"></i>18 Oct</li>
+            </ul>
+            <h3>{{MProduct.productName}}</h3>
+            <p>{{MProduct.productDetail}}</p>
+            <p>{{MProduct.detailSpecifics}}</p>
+                <div class="blog-tags">
+                   
+                    <a href="#"><i class="fa fa-tag"></i>Web</a>
+                    <a href="#"><i class="fa fa-tag"></i>Design</a>
+                    <a href="#"><i class="fa fa-tag"></i>Marketing</a>
+                    <a href="#"><i class="fa fa-tag"></i>Development</a>
+                    <a href="#"><i class="fa fa-tag"></i>Branding</a>
+                    <a href="#"><i class="fa fa-tag"></i>Photography</a>
+                </div>
+        </div>
+    </div>
+    </div>
+</div> -->
+
+
+
+
+
+    <!-- Container -->
+   
+<br>
+<br>
+<br>
+<br>
+    <div class="container bootdey">
+        <div class="col-md-12">
+            <section class="panel">
+                <div class="panel-body">
+                    <div class="newspaper ">
+                        <div class="pro-img-details">
+                            <img src="https://localhost:44303/{{MProduct.image}}" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <!-- <h4 class="pro-d-title">
+                                <a href="#" class="">
+                                    {{MProduct.productName}}
+                                </a>
+                            </h4> -->
+                            
+                            <div class="m-bot15"> <strong> {{MProduct.productName}} </strong> </div>
+                            
+                            <p>
+                                
+                                {{MProduct.productDetail}}
+                            </p>
+                            <div class="product_meta">
+                                <span class="posted_in"> <strong>Categories:</strong> <a rel="tag" href="#">RAM</a>, <a
+                                        rel="tag" href="#">ROM</a>, <a rel="tag" href="#">AMD</a>, <a rel="tag"
+                                        href="#">NAMI</a>.</span>
+                                <span class="tagged_as"><strong>Tags:</strong> <a rel="tag" href="#">mens</a>, <a rel="tag"
+                                        href="#">womens</a>.</span>
+                            </div>
+                            <div class="m-bot15"> <strong>Price : </strong> <span>{{MProduct.productPrice}}</span> <span
+                                    class="pro-price"> </span></div>
+                            <div class="form-group">
+                                <label></label>
+                                <input [(ngModel)]="Mcaft.pdStock" name="pdStock" type="quantiy" placeholder="1" class="form-control quantity">
+                            </div>
+                            <p>
+                                <button (click)="addprocduts(MProduct)" class="btn btn-round btn-danger" type="button"><i class="fa fa-shopping-cart"></i> Add
+                                    to Cart</button>
+                            </p>
+                        </div>
+                        <!-- <div class="pro-img-list">
+                            <a href="#">
+                                <img src="https://via.placeholder.com/115x100/87CEFA/000000" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="https://via.placeholder.com/115x100/FF7F50/000000" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="https://via.placeholder.com/115x100/20B2AA/000000" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="https://via.placeholder.com/120x100/20B2AA/000000" alt="">
+                            </a>
+                        </div> -->
+                    </div>
+
+
+                     <div class="pro-img-list">
+                       
+                         <div *ngFor="let dimg of dataDetail">
+                            <a href="https://localhost:44303/{{dimg.image}}">
+                                <img  src="https://localhost:44303/{{dimg.image}}"    height="150"  alt="">
+                            </a>
+                            <!-- <a href="#">
+                                <img src="https://via.placeholder.com/115x100/FF7F50/000000" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="https://via.placeholder.com/115x100/20B2AA/000000" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="https://via.placeholder.com/120x100/20B2AA/000000" alt="">
+                            </a> -->
+                            
+                            </div>
+                        </div>
+                        <!-- <div class=" pro-img-list">
+                            <div class="center col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <li *ngFor="let dimg of dataDetail">
+                                    <a href="https://localhost:44303/{{dimg.image}}">
+                                        <div class="center col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <img class="imgSize m-2" src="https://localhost:44303/{{dimg.image}}" width="150">
+                                    </div>
+                                    </a>
+                                </li>
+                            </div>
+                        </div> -->
+                </div>
+            </section>
+        </div>
+    </div>
+          

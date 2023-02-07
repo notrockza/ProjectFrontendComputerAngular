@@ -1,0 +1,85 @@
+<div id="blog" class="section md-padding bg-grey">
+
+    <!-- Container -->
+    <div class="">
+
+        <!-- Row -->
+        <div class="row"  >
+            <!-- Section header -->
+            <div class="section-header text-center" >
+                <h2 class="title">Product</h2>
+            </div>
+            <!-- /Section header -->
+            <!-- blog -->
+            <div class="product-card" matSort *ngFor="let row of productsN">
+                <div  class="badge">Hot</div>
+                <div  class="product-tumb" >
+                    <img src="https://localhost:44303/{{row.image}}" alt="" >
+                </div>
+                <div class="product-details">
+                    <span class="product-catagory">Women,bag</span>
+                    <h4><a >{{row.productName}}</a></h4>
+                    <p >{{row.productDetail}}</p>
+                    <div class="product-bottom-details">
+                        <div class="product-price" ><small>$96.00</small>${{row.productPrice}}</div>
+                        <div class="product-links">
+                            <a type="button" [routerLink]="[ '/productsDetail',row.id]"><i class="fa fa-info" aria-hidden="true"></i></a>
+                            <!-- <a href=""><i class="fa fa-shopping-cart"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /blog -->
+
+            <!-- blog -->
+            <div class="product-card">
+                <div class="badge">Hot</div>
+                <div class="product-tumb">
+                    <img src="assets/getcss/img/02.jpg" alt="">
+                </div>
+                <div class="product-details">
+                    <span class="product-catagory">Women,bag</span>
+                    <h4><a href="">Women leather bag</a></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+                    <div class="product-bottom-details">
+                        <div class="product-price"><small>$96.00</small>$230.99</div>
+                        <div class="product-links">
+                            <a href=""><i class="fa fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /blog -->
+
+            <!-- blog -->
+            <div class="product-card">
+                <div class="badge">Hot</div>
+                <div class="product-tumb">
+                    <img src="assets/getcss/img/03.jpg" alt="">
+                </div>
+                <div class="product-details">
+                    <span class="product-catagory">Women,bag</span>
+                    <h4><a href="">Women leather bag</a></h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+                    <div class="product-bottom-details">
+                        <div class="product-price"><small>$96.00</small>$230.99</div>
+                        <div class="product-links" >
+                            <a href=""><i class="fa fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- /blog -->
+
+        </div>
+        <!-- /Row -->
+
+    </div>
+    <!-- /Container -->
+
+</div>

@@ -1,0 +1,7 @@
+<app-menu *ngIf="rest.isLoggedIn()"></app-menu>
+<router-outlet></router-outlet>
+<!-- <app-index></app-index>  -->
+<!-- <app-about></app-about> -->
+<!-- <app-products></app-products> -->
+<!-- <app-login></app-login> -->
+<app-admin-menu *ngIf="rest.isLoggedInAdmin()" ></app-admin-menu>

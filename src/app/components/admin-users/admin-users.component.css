@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 15%;
+  }
+  
+  .example-button-row {
+    padding: 8px
+  }
+  
+  .imgSize {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+  }
+  
+  th.mat-column-image, td.mat-column-image {
+    width: 150px;
+  }
+  
+  th.mat-column-id, td.mat-column-id {
+    width: 50px;
+  }

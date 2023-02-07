@@ -1,0 +1,79 @@
+<div class="content-wrapper p-4" >
+
+    <div class="mt-3" >
+        <div class="d-flex justify-content-between align-items-center" >
+            <mat-form-field appearance="outline" class="w-50">
+                <mat-label>Search Users</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+            <!-- <button class="example-button-row" color="primary" mat-flat-button routerLink="/ProductsForm">
+                <mat-icon>add</mat-icon> Add Product
+            </button> -->
+        </div>
+        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8  table-hover" style="color: rgb(255, 0, 0);">
+            
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+         
+            <ng-container matColumnDef="userEmail">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                <td mat-cell *matCellDef="let row"> {{row.userEmail}} </td>
+            </ng-container>
+
+            
+
+            <ng-container matColumnDef="userPassword">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Password </th>
+                <td mat-cell *matCellDef="let row"> {{row.userPassword}} </td>
+            </ng-container>
+
+            <!-- <ng-container matColumnDef="titleNavigation">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> title </th>
+                <td mat-cell *matCellDef="let row"> {{row.titleNavigation.titleName}} </td>
+            </ng-container> -->
+
+            <ng-container matColumnDef="firstName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> firstName </th>
+                <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="lastName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> lastName </th>
+                <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="tel">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> tel </th>
+                <td mat-cell *matCellDef="let row"> {{row.tel}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="titleNavigation">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> title </th>
+                <td mat-cell *matCellDef="let row"> {{row.titleNavigation.titleName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="aciton">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> aciton </th>
+                <td mat-cell *matCellDef="let row">
+                   
+                    <!-- <button [routerLink]="[ '/productsEdit', row.id ]" class="m-2" mat-mini-fab color="accent">
+                        <mat-icon>edit</mat-icon>
+                    </button> -->
+                    
+                    <button mat-mini-fab color="accent" (click)="onDelete(row.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <!-- นิยามส่วนหัวและแถว -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+</div>

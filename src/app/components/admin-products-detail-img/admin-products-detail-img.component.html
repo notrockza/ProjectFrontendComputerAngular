@@ -1,0 +1,41 @@
+<div class="container bootstrap snipets">
+    <h1 class="text-center text-muted">Product Detail Image</h1>
+    <br>
+    <div class="row flow-offset-1">
+      <div class="col-xs-6 col-md-4" *ngFor="let dimg of dataprodcuts">
+        <div class="product tumbnail thumbnail-3"><a href="https://localhost:44303/{{dimg.image}}"><img src="https://localhost:44303/{{dimg.image}}" height="200"></a>
+          <div class="caption">
+            <h6><a href="#"></a></h6><span class="price">
+              </span><span class="price sale" ></span>
+              
+              <button (click)=deleteDetailProdcuts(id) type="button" class="btn btn-outline-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- <div class="col-xs-6 col-md-4">
+        <div class="product tumbnail thumbnail-3"><a href="#"><img src="https://via.placeholder.com/350x280/FFB6C1/000000" alt=""></a>
+          <div class="caption">
+            <h6><a href="#"></a></h6><span class="price">
+              <del></del></span><span class="price sale"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <div class="product tumbnail thumbnail-3"><a href="#"><img src="https://via.placeholder.com/350x280/87CEFA/000000" alt=""></a>
+          <div class="caption">
+            <h6><a href="#"></a></h6><span class="price">
+              <del></del></span><span class="price sale"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <div class="product tumbnail thumbnail-3"><a href="#"><img src="https://via.placeholder.com/350x280/FF7F50/000000" alt=""></a>
+          <div class="caption">
+            <h6><a href="#"></a></h6><span class="price"></span>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  </div>

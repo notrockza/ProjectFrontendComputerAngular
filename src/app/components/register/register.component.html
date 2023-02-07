@@ -1,0 +1,88 @@
+<br>
+<br>
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
+          alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-5 col-xl-4 offset-xl-1">
+        <form>
+          <br>
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+            <p class="lead fw-normal mb-0 me-3">Register</p>
+          </div>
+
+
+          <!-- <label for="form_need"></label> -->
+
+        <div class="col-md-15 ">
+          
+            <form class="contact-form" #registerForm="ngForm" (submit)="onSubmit(registerForm.value)">
+
+
+              <mat-form-field appearance="fill" >
+                <mat-label>Select Title</mat-label>
+                <mat-select [(ngModel)]="MUser.titleNavigation" name="title">
+                  <mat-option *ngFor="let i of mtype" [value]="i.id">
+                    {{i.titleName}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <input [(ngModel)]="MUser.FirstName" name="FirstName" type="text" class="input" placeholder="FirstName">
+              <input [(ngModel)]="MUser.LastName" name="LastName" type="text" class="input" placeholder="LastName">
+              
+              <!-- <div class="form-group">  <select  ngModel name="LastName" class="form-control" required="required" data-error="Please specify your need.">
+                <option value="" selected disabled *ngFor="let i of mtype" [value]="i.id">--Select Your Issue--</option>
+                <option>{{i.title}}</option>
+            </select> </div> -->
+
+            
+              <!-- <input ngModel name="Title" type="text" class="input" placeholder="Mr"> -->
+              <input [(ngModel)]="MUser.Tel" name="Tel" type="text" class="input" placeholder="Tell">
+              
+              <input type="email" class="input" placeholder="Email" [(ngModel)]="MUser.UserEmail" name="UserEmail" #localEmail="ngModel"
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required
+                [ngClass]="{'is-invalid': localEmail.errors && localEmail.touched}">
+              <div class="invalid-feedback">
+                กรุณากรอกอีเมลล์ให้ถูกต้อง
+              </div>
+              <input name="UserPassword" type="password" class="input" placeholder="Password" [(ngModel)]="MUser.UserPassword"
+                #localPassword="ngModel" minlength="4" required
+                [ngClass]="{'is-invalid': localPassword.errors && localPassword.touched}">
+              <div class="invalid-feedback">
+                กรุณากรอกรหัสผ่านให้ถูกต้อง
+              </div>
+              <textarea class="input" ngModel name="UserAddress" placeholder="Address"></textarea>
+              <button [disabled]="registerForm.form.invalid" type="submit" class="main-btn">Accept</button>
+            </form>
+        </div>
+
+        <div *ngIf="isError" class="alert alert-danger alert-dismissible">
+          <h5><i class="fa fa-ban"></i> Alert!</h5>
+          {{isError}}
+        </div>
+
+         
+        <div class="text-center text-lg-start mt-4 pt-2">
+            <p class="small fw-bold mt-2 pt-1 mb-0">Do you want to <a (click)="onCancel()"
+                class="link-danger">Cancel</a></p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <!-- Copyright -->
+    <div class="text-white mb-3 mb-md-0">
+      Copyright © 2020. All rights reserved.
+    </div>
+    <!-- Copyright -->
+
+    <!-- Right -->
+
+    <!-- Right -->
+  </div>
+</section>
